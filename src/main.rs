@@ -28,28 +28,47 @@ fn main() {
 		let subtitle = gtk::Label::new(Some(""));
 		subtitle.set_markup("<span font_desc=\"8.0\">By Daniel</span>");
 
+		let amountOfRAM = gtk::Label::new(Some("Select size of RAM:"));
+		let ramEntry = gtk::Entry::new();
+
 		let ramProtocolSelectorOne = gtk::RadioButton::with_label("CloudRAM v1.1");
 		let ramProtocolSelectorTwo = gtk::RadioButton::with_label_from_widget(&ramProtocolSelectorOne, "CloudRAM v2.0");
+
+		let packSelection = gtk::Box::new(gtk::Orientation::Horizontal, 10);
+		packSelection.set_spacing(10);
+		packSelection.pack_start(&ramProtocolSelectorOne, true, true, 0);
+		packSelection.pack_end(&ramProtocolSelectorTwo, true, true, 0);
+
+		let frameSelection = gtk::Frame::new(Some("Setup Protocol"));
+		frameSelection.add(&packSelection);
+
+		let ramSelection = gtk::Box::new(gtk::Orientation::Horizontal, 10);
+		ramSelection.set_spacing(10);
+		ramSelection.pack_start(&amountOfRAM, true, true, 0);
+		ramSelection.pack_end(&ramEntry, true, true, 0);
+
+		let frameRAM = gtk::Frame::new(Some("Setup RAM"));
+		frameRAM.add(&ramSelection);
 
 		let progress = gtk::ProgressBar::new();
 		progress.set_text(Some("Progress"));
 		progress.set_show_text(true);
 		progress.set_hexpand(true);
-		//progress.set_fraction(0.3);
+
 
 		let button = Button::with_label("Download RAM");
 		button.connect_clicked(clone!(@weak progress => move |_| {
 			let mut rng = rand::thread_rng();
 			let currentProgress = progress.get_fraction();
-			progress.set_fraction(currentProgress + rng.gen_range(0.1, 0.3));
+			progress.set_fraction(currentProgress + rng.gen_range(0.05, 0.3));
 		}));
 
 		grid.attach(&title, 0, 0, 2, 1);
 		grid.attach(&subtitle, 0, 1, 2, 1);
-		grid.attach(&ramProtocolSelectorOne, 0, 2, 1, 1);
-		grid.attach(&ramProtocolSelectorTwo, 1, 2, 1, 1);
-		grid.attach(&button, 0, 3, 2, 1);
-		grid.attach(&progress, 0, 4, 2, 1);
+		grid.attach(&frameSelection, 0, 2, 2, 1);
+		grid.attach(&frameRAM, 0, 3, 2, 1);
+		grid.attach(&button, 0, 4, 2, 1);
+		grid.attach(&progress, 0, 5, 2, 1);
 
 		window.add(&grid);
 
