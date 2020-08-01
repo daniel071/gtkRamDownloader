@@ -19,8 +19,11 @@ fn main() {
 
 		let grid = gtk::Grid::new();
 
-		let title = gtk::Label::new(Some("Ram Downloader"));
-		title.set_markup("<large>test</large>");
+		let title = gtk::Label::new(Some(""));
+		title.set_markup("<span font_desc=\"20.0\">Ram Downloader</span>");
+
+		let subtitle = gtk::Label::new(Some(""));
+		subtitle.set_markup("<span font_desc=\"8.0\">By Daniel Pavela</span>");
 
         let button = Button::with_label("Download RAM");
         button.connect_clicked(|_| {
@@ -33,8 +36,9 @@ fn main() {
 		progress.set_hexpand(true);
 
 		grid.attach(&title, 0, 0, 1, 1);
-		grid.attach(&button, 0, 1, 1, 1);
-		grid.attach(&progress, 0, 2, 1, 1);
+		grid.attach(&subtitle, 0, 1, 1, 1);
+		grid.attach(&button, 0, 2, 1, 1);
+		grid.attach(&progress, 0, 3, 1, 1);
 
 		window.add(&grid);
 
