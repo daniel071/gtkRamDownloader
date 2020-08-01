@@ -15,7 +15,8 @@ fn main() {
     application.connect_activate(|app| {
         let window = ApplicationWindow::new(app);
         window.set_title("Ram Downloader");
-        window.set_default_size(350, 70);
+        window.set_default_size(350, 100);
+		 window.set_border_width(20);
 
 		let grid = gtk::Grid::new();
 
@@ -24,6 +25,9 @@ fn main() {
 
 		let subtitle = gtk::Label::new(Some(""));
 		subtitle.set_markup("<span font_desc=\"8.0\">By Daniel Pavela</span>");
+
+		let ramProtocolSelectorOne = gtk::RadioButton::with_label("CloudRAM v1.1");
+		let ramProtocolSelectorTwo = gtk::RadioButton::with_label_from_widget(&ramProtocolSelectorOne, "CloudRAM v2.0");
 
         let button = Button::with_label("Download RAM");
         button.connect_clicked(|_| {
@@ -35,10 +39,12 @@ fn main() {
 		progress.set_show_text(true);
 		progress.set_hexpand(true);
 
-		grid.attach(&title, 0, 0, 1, 1);
-		grid.attach(&subtitle, 0, 1, 1, 1);
-		grid.attach(&button, 0, 2, 1, 1);
-		grid.attach(&progress, 0, 3, 1, 1);
+		grid.attach(&title, 0, 0, 2, 1);
+		grid.attach(&subtitle, 0, 1, 2, 1);
+		grid.attach(&ramProtocolSelectorOne, 0, 2, 1, 1);
+		grid.attach(&ramProtocolSelectorTwo, 1, 2, 1, 1);
+		grid.attach(&button, 0, 3, 2, 1);
+		grid.attach(&progress, 0, 4, 2, 1);
 
 		window.add(&grid);
 
