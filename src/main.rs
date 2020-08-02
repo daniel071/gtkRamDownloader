@@ -1,6 +1,8 @@
 extern crate gtk;
 extern crate gio;
 
+#![allow(non_snake_case)]
+
 use gtk::prelude::*;
 use gio::prelude::*;
 use glib::clone;
