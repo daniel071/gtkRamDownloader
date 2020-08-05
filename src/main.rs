@@ -7,7 +7,8 @@ use gtk::prelude::*;
 use gio::prelude::*;
 use glib::clone;
 use gtk::{Application, ApplicationWindow, Button};
-use rand::Rng;
+use std::env;
+use std::process::Command;
 
 fn main() {
     let application = Application::new(
@@ -60,9 +61,25 @@ fn main() {
 
 		let button = Button::with_label("Download RAM");
 		button.connect_clicked(clone!(@weak progress => move |_| {
-			let mut rng = rand::thread_rng();
-			let currentProgress = progress.get_fraction();
-			progress.set_fraction(currentProgress + rng.gen_range(0.05, 0.3));
+			progress.set_fraction(1.0);
+			let operatingSysten = env::consts::OS;
+			if operatingSysten == "windows" {
+				Command::new("start")
+			        .arg("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+			        .spawn()
+			        .expect("ls command failed to start");
+			} else if operatingSysten == "macos" {
+				Command::new("open")
+					.arg("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+					.spawn()
+					.expect("ls command failed to start");
+			} else {
+				Command::new("xdg-open")
+					.arg("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+					.spawn()
+					.expect("ls command failed to start");
+			}
+
 		}));
 
 		grid.attach(&title, 0, 0, 2, 1);
