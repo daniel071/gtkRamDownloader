@@ -67,17 +67,17 @@ fn main() {
 				Command::new("start")
 			        .arg("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 			        .spawn()
-			        .expect("ls command failed to start");
+			        .expect("rick roll failed to rick roll lol");
 			} else if operatingSysten == "macos" {
 				Command::new("open")
 					.arg("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 					.spawn()
-					.expect("ls command failed to start");
+					.expect("rick roll failed to rick roll lol");
 			} else {
 				Command::new("xdg-open")
 					.arg("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 					.spawn()
-					.expect("ls command failed to start");
+					.expect("rick roll failed to rick roll lol");
 			}
 
 		}));
