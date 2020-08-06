@@ -1,6 +1,8 @@
 # Ram Downloader
 **Made in GTK and Rust.**
 
+<sub>Ram Downloader is a joke program. It doesn't actually download any RAM, I made this for fun and experience</sub>
+
 Ram Downloader is a simple GUI utility that helps download more RAM. You can select
 how much RAM you want to download and what CloudRAM protocol to use. 
 
