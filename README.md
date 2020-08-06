@@ -14,7 +14,7 @@ Apple macOS 10.7 and higher as well as UNIX and Linux.
 
 ## Installation
 Download the binary for your operating system from [here](https://github.com/daniel071/gtkRamDownloader/releases/) and execute it. 
-**If you are on Windows or macOS, you must [install GTK](https://www.gtk.org/docs/installations/) first. 
+**If you are on Windows or macOS, you must** [**install GTK**](https://www.gtk.org/docs/installations/) **first.** 
 Currently there are only Windows and Linux binaries. macOS binaries are coming soon. If you are on macOS, you can follow the compiling instructions.
 
 ## Compiling
