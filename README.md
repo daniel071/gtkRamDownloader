@@ -19,7 +19,7 @@ Currently there are only Windows and Linux binaries. macOS binaries are coming s
 
 ## Compiling
 Make sure you have [git](https://git-scm.com/) for your operating system.
-Make sure you also have the [rust compiler](https://www.rust-lang.org/tools/install) and the [GTK](https://www.gtk.org/docs/installations/)
+Make sure you also have the [rust compiler](https://www.rust-lang.org/tools/install) and the [GTK](https://www.gtk.org/docs/installations/) framework.
 
 1. Download the source code of the repo with `git clone https://github.com/daniel071/gtkRamDownloader.git`
 2. CD into the new directory
