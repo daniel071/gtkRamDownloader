@@ -5,7 +5,8 @@ Ram Downloader is a simple GUI utility that helps download more RAM. You can sel
 how much RAM you want to download and what CloudRAM protocol to use.
 
 ## Screenshots
-![Screenshot](https://raw.githubusercontent.com/daniel071/images-for-readme/master/coolScreenshot.png)
+![Linux Screenshot](https://raw.githubusercontent.com/daniel071/images-for-readme/master/coolScreenshot.png)
+![Windows Screenshot](https://raw.githubusercontent.com/daniel071/images-for-readme/master/ramDownloaderWindows.png)
 
 ## Installation
 Download the binary for your operating system from [here](https://github.com/daniel071/gtkRamDownloader/releases/) and execute it. Currently there are only Linux binaries. Windows and macOS binaries are coming soon. If you are on Windows or macOS, you can follow the compiling instructions.
