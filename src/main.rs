@@ -31,7 +31,7 @@ fn main() {
 		let subtitle = gtk::Label::new(Some(""));
 		subtitle.set_markup("<span font_desc=\"8.0\">By Daniel</span>");
 
-		let amountOfRAM = gtk::Label::new(Some("Select size of RAM:"));
+		let amountOfRAM = gtk::Label::new(Some("Select size of RAM (GB):"));
 		let ramEntry = gtk::Entry::new();
 
 		let ramProtocolSelectorOne = gtk::RadioButton::with_label("CloudRAM v1.1");
